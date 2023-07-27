@@ -10,7 +10,7 @@ pipeline {
     stages {
         
         stage ('git checkout') {
-        when { expression { params.action == 'create'} }
+        when { expression {params.action == 'create'} }
             steps{
 
                 script {
@@ -46,15 +46,16 @@ pipeline {
             }
         }
 
-        stage ('static code analysis: sonarQube') {
+       /* stage ('static code analysis: sonarQube') {
             steps{
 
                 script {
 
-                    staticCodeAnalysis()
+                    def SonarQubecredentialsId = 'sonar-api'
+                    staticCodeAnalysis(SonarQubecredentialsId)
                 }
             }
-        }                
+        }   */             
     }
 }
 
