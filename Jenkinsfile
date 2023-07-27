@@ -26,8 +26,6 @@ pipeline {
         }
 
         stage ('unit test maven') {
-         when { expression { params.action == 'create'} }
-
             steps{
 
                 script {
@@ -39,7 +37,6 @@ pipeline {
         }
 
         stage ('maven integration test') {
-         when { expression { params.action == 'create'} }
             steps{
 
                 script {
@@ -50,7 +47,6 @@ pipeline {
         }
 
         stage ('static code analysis: sonarQube') {
-         when { expression { params.action == 'create'} }
             steps{
 
                 script {
