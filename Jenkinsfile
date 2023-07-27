@@ -7,7 +7,10 @@ pipeline {
 
                 script {
 
-                    git branch: 'sample', url: 'https://github.com/sandeep-vangala/mrdevops_java_app.git'
+                    gitCheckout(
+                        branch: "sample"
+                        url: "https://github.com/sandeep-vangala/mrdevops_java_app.git"
+                    ) 
 
                     
                 }
