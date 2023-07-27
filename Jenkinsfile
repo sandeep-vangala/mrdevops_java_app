@@ -58,7 +58,6 @@ pipeline {
         }   */
 
         stage ('build stage: maven') {
-        when { expression {params.action == 'create'} }
             steps{
                 script {
 
